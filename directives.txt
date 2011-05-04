@@ -1,0 +1,10 @@
+include
+includebin
+address
+byte
+word
+inesprg
+ineschr
+inesmir
+inesplc
+inesreg

@@ -1,0 +1,80 @@
+		HASM v1.0
+
+   Usage:
+   ------
+	hasm [options] source
+
+	This assembler accepts one source file that will be used
+	to build an NES ROM file to be used by an emulator.
+
+	Option	Description
+	------	-----------
+	-raw	The 'raw' flag causes the assembler to skip the
+		generation of the iNES header. If the 'raw' flag
+		is not used, the iNES header will be generated.
+
+   Directives:
+   -----------
+	include		Includes another source file to be used
+			  by the assembler.
+			  ex: .include "source_2.asm"
+	includebin	Includes a binary file to be used by the
+			  assembler.
+			  ex: .includebin "graphics.bin"
+	address		Sets the location of the memory address
+			  counter to the specified address.
+			  ex: .address $0200
+	byte		Allows the inclusion of arbitrary bytes
+			  of data to be defined in the binary.
+			  ex: .byte $45, $A0
+	word		Allows the inclusion of arbitrary words
+			  of data to be defined in the binary.
+			  ex: .word $4500, $A000
+	inesprg		Sets the PRG byte of the iNES header to
+			  the specified value.
+			  .inesprg #$02
+	ineschr		Sets the CHR byte of the iNES header to
+			  the specified value.
+			  .ineschr #$02
+	inesmir		Sets the MIR byte of the iNES header to
+			  the specified value.
+			  .inesmir #$02
+	inesplc		Sets the PlayChoice byte of the iNES
+			  header to the specified value.
+			  .inesplc #$02
+	inesreg		Sets the Region byte of the iNES header
+			  to the specified value.
+			  .inesreg #$02
+   Operands:
+   ---------
+	By default, HASM strictly enforces the way operands may
+	be used. Operand modes that do not explicitly conform to
+	the specification are considered invalid and will be
+	rejected.
+
+	Operand		Example
+	-------		-------
+	Immediate	#$4F
+	Zero-Page	$44
+	Zero-Page,x	$44,x
+	Zero-Page,y	$44,y
+	Absolute	$4400
+	Absolute,x	$4400,x
+	Absolute,y	$4400,y
+	Indirect	($4400)
+	Indirect,x	($44,x)
+	Indirect,y	($44,y)
+	Accumulator	a
+	Implied
+	Relative	LABEL
+
+   Labels:
+   -------
+	HASM allows the use of labels in place of having to write
+	a commonly used address multiple times. A label is not case
+	sensitive and may or may not end with a semi-colon ':'
+
+	Labels must start with a letter and all other characters may
+	be a letter, digit, or underscore '_'
+
+	Labels used as a relative operand MAY NOT end in a semi-colon.

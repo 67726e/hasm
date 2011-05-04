@@ -1,0 +1,13 @@
+Immediate	#$44
+Zero-Page	$44
+Zero-Page,x	$44,x
+Zero-Page,y	$44,y
+Absolute	$4400
+Absolute,x	$4400,x
+Absolute,y	$4400,y
+Indirect	($4400)
+Indirect,x	($44,x)
+Indirect,y	($44,y)
+Accumulator	a
+Implied		--nothing--
+Relative	LABEL
