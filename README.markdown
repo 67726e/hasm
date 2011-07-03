@@ -22,13 +22,7 @@ A 6502 assembler with basic optimization functions capable of producing NES ROMs
 	to build an NES ROM file to be used by an emulator.
 
 ## Directives
-	include
-	includebin
-	address
-	byte
-	word
-	inesprg
-	ineschr
-	inesmir
-	inesplc
-	inesreg
+	See directives.txt
+
+## Operands
+	See operands.txt
