@@ -20,3 +20,5 @@ A 6502 assembler with basic optimization functions capable of producing NES ROMs
 
 	This assembler accepts one source file that will be used
 	to build an NES ROM file to be used by an emulator.
+Directives
+----------
